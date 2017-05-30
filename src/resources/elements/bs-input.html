@@ -1,0 +1,4 @@
+<template>
+  <label for="${name}" class="${srOnly ? 'sr-only' : ''}" if.bind="label">${label}</label>
+  <input type="${type}" id="${name}" class="form-control input-${size}" placeholder="${placeholder}" disabled.bind="disabled" readonly.bind="readonly" />
+</template>

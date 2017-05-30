@@ -1,0 +1,7 @@
+<template>
+  <label for="${name}">${label}</label>
+  <select id="${name}" class="form-control" multiple.bind="multiple" value.bind="value">
+    <option show.bind="placeholder">${placeholder}</option>
+    <option repeat.for="option of options" value="${option}">${option}</option>
+  </select>
+</template>

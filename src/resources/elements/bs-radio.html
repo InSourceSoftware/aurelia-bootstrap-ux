@@ -1,0 +1,5 @@
+<template class="${layout == 'default' ? 'radio' : ''} ${disabled ? 'disabled' : ''}">
+  <label class="radio-${layout} ${disabled ? 'disabled' : ''}">
+    <input type="radio" name="${name}" model.bind="model" value.bind="value" checked.bind="checked" disabled.bind="disabled" /> ${label}
+  </label>
+</template>
