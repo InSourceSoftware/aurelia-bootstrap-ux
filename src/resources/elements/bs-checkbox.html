@@ -2,4 +2,5 @@
   <label ref="lbl">
     <input ref="input" type="checkbox" name="${name}" model.bind="model" value.bind="value" checked.bind="checked" disabled.bind="disabled" /> ${label}
   </label>
+  <span id="${name}-help" class="help-block" show.bind="helptext">${helptext}</span>
 </template>

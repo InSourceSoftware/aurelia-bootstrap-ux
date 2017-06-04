@@ -6,10 +6,14 @@ export class BsRadio {
   @bindable({ defaultBindingMode: bindingMode.twoWay}) checked = false;
   @bindable model;
   @bindable label = '';
+  @bindable helptext = '';
   @bindable disabled = false;
   @bindable inline = false;
 
   bind() {
+    if (this.checked === 'true' || this.checked === 'checked') {
+      this.checked = true;
+    }
     if (!this.model) {
       this.model = this.value;
     }
@@ -24,6 +28,9 @@ export class BsRadio {
     if (this.disabled) {
       this.template.classList.add('disabled');
       this.lbl.classList.add('disabled');
+    }
+    if (this.helptext) {
+      this.input.setAttribute('aria-describedby', `${this.name}-help`);
     }
   }
 }
