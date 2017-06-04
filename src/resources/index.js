@@ -1,16 +1,18 @@
 export function configure(config) {
   config.globalResources([
+    './attributes/bs-button-group',
+    './attributes/bs-button-toolbar',
+    './attributes/bs-form-group',
+    './attributes/bs-input-group'
+  ]);
+  config.globalResources([
     './elements/bs-button',
-    './elements/bs-button-group',
-    './elements/bs-button-toolbar',
     './elements/bs-checkbox',
     './elements/bs-footer',
     './elements/bs-form',
-    './elements/bs-form-group',
     './elements/bs-header',
     './elements/bs-icon',
     './elements/bs-input',
-    './elements/bs-input-group',
     './elements/bs-input-group-addon',
     './elements/bs-input-group-button',
     './elements/bs-nav',
