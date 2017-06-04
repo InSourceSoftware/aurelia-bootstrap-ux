@@ -3,7 +3,9 @@ export function configure(config) {
     './attributes/bs-button-group',
     './attributes/bs-button-toolbar',
     './attributes/bs-form-group',
-    './attributes/bs-input-group'
+    './attributes/bs-inline-form',
+    './attributes/bs-input-group',
+    './attributes/bs-well'
   ]);
   config.globalResources([
     './elements/bs-button',

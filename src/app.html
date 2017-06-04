@@ -8,7 +8,7 @@
         <form submit.trigger="onSubmit()">
           <fieldset>
             <legend>Log In</legend>
-            <div class="well form-inline">
+            <div bs-well bs-inline-form>
               <bs-input bs-form-group name="username" type="text" label="User Name" sr-only="true" placeholder="Username" value=""></bs-input>
               <bs-input bs-form-group name="password" type="password" label="Password" sr-only="true" placeholder="Password" value=""></bs-input>
               <bs-submit bs-form-group size="sm" type="primary" block="true">Submit</bs-submit>
@@ -16,7 +16,7 @@
           </fieldset>
           <fieldset>
             <legend>Form Components</legend>
-            <div class="well">
+            <div bs-well>
               <bs-input bs-form-group name="text1" type="text" label="Text 1" placeholder="Some text..." value.bind="value" size="lg"></bs-input>
               <span bs-form-group>${value}</span>
               <bs-input bs-form-group name="text2" type="text" label="Text 2" placeholder="Some text..." value="" disabled="disabled"></bs-input>
@@ -63,14 +63,18 @@
           </fieldset>
           <fieldset>
             <legend>Components</legend>
-            <div class="well">
-              <div bs-button-toolbar>
-                <div bs-button-group>
-                  <bs-button icon="align-left"></bs-button>
-                  <bs-button icon="align-center"></bs-button>
-                  <bs-button icon="align-right"></bs-button>
-                  <bs-button icon="align-justify"></bs-button>
-                </div>
+            <div bs-well bs-button-toolbar>
+              <div bs-button-group>
+                <bs-button icon="align-left"></bs-button>
+                <bs-button icon="align-center"></bs-button>
+                <bs-button icon="align-right"></bs-button>
+                <bs-button icon="align-justify"></bs-button>
+              </div>
+              <div bs-button-group>
+                <bs-button>1</bs-button>
+                <bs-button>2</bs-button>
+                <bs-button>3</bs-button>
+                <bs-button>4</bs-button>
               </div>
             </div>
           </fieldset>
