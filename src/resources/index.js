@@ -2,6 +2,7 @@ export function configure(config) {
   config.globalResources([
     './elements/bs-button',
     './elements/bs-button-group',
+    './elements/bs-button-toolbar',
     './elements/bs-checkbox',
     './elements/bs-footer',
     './elements/bs-form',
@@ -16,6 +17,8 @@ export function configure(config) {
     './elements/bs-navbar',
     './elements/bs-radio',
     './elements/bs-select',
-    './elements/bs-split-button'
+    './elements/bs-split-button',
+    './elements/bs-submit',
+    './elements/bs-textarea'
   ]);
 }

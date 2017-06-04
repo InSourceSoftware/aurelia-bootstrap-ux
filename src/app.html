@@ -5,32 +5,41 @@
         <div class="page-header">
           <h1>${message}</h1>
         </div>
-        <form>
+        <form submit.trigger="onSubmit()">
           <fieldset>
             <legend>Log In</legend>
             <div class="form-inline well">
-              <bs-form-group>
+              <div class="form-group">
                 <bs-input name="username" type="text" label="User Name" sr-only="true" placeholder="Username" value=""></bs-input>
-              </bs-form-group>
-              <bs-form-group>
+              </div>
+              <div class="form-group">
                 <bs-input name="password" type="password" label="Password" sr-only="true" placeholder="Password" value=""></bs-input>
-              </bs-form-group>
-              <bs-form-group>
-                <bs-button type="submit" size="sm" kind="primary" structure="block">Submit</bs-button>
-              </bs-form-group>
+              </div>
+              <div class="form-group">
+                <bs-submit size="sm" type="primary" block="true">Submit</bs-submit>
+              </div>
             </div>
           </fieldset>
           <fieldset>
             <legend>Form Components</legend>
             <div class="well">
               <div class="form-group">
-                <bs-input name="text1" type="text" label="Text 1" placeholder="Some text..." value="" size="lg"></bs-input>
+                <bs-input name="text1" type="text" label="Text 1" placeholder="Some text..." value.bind="value" size="lg"></bs-input>
               </div>
               <div class="form-group">
-                <bs-input name="text2" type="text" label="Text 2" placeholder="Some text..." value="" disabled="true"></bs-input>
+                <span>${value}</span>
               </div>
               <div class="form-group">
-                <bs-input name="text3" type="text" label="Text 3" placeholder="Some text..." value="" size="sm"></bs-input>
+                <bs-input name="text2" type="text" label="Text 2" placeholder="Some text..." value="" disabled="disabled"></bs-input>
+              </div>
+              <div class="form-group">
+                <bs-input name="text3" type="text" label="Text 3" placeholder="Some text..." value="This input is readonly" size="sm" readonly="readonly"></bs-input>
+              </div>
+              <div class="form-group">
+                <bs-input name="text4" type="text" label="Text 4" placeholder="Some text..." value="" helptext="A block of help text."></bs-input>
+              </div>
+              <div class="form-group">
+                <bs-textarea name="textarea" label="Textarea" helptext="Please fill in this textarea." value="Some text..."></bs-textarea>
               </div>
               <div class="form-group">
                 <bs-select name="select1" label="Single Select" placeholder="Select one..." value="" options.bind="[1,2,3]"></bs-select>
@@ -39,14 +48,17 @@
                 <bs-select name="select2" label="Multi Select" multiple="true" options.bind="[1,2,3]"></bs-select>
               </div>
               <div class="form-group">
-                <bs-checkbox name="checkbox1" label="Checkbox 1" value="1"></bs-checkbox>
+                <bs-checkbox name="checkbox1" label="Checkbox 1" value="1" checked.bind="checked"></bs-checkbox>
               </div>
               <div class="form-group">
-                <bs-checkbox name="checkbox1" label="Checkbox 2" value="2" checked="checked" disabled="true"></bs-checkbox>
+                <span class="glyphicon glyphicon-${checked ? 'ok' : 'remove'}"></span> ${checked ? 'Checked' : 'Not Checked'}
               </div>
               <div class="form-group">
-                <bs-checkbox name="checkbox2" label="Checkbox 3" value="1" layout="inline"></bs-checkbox>
-                <bs-checkbox name="checkbox2" label="Checkbox 4" value="2" layout="inline" checked="checked" disabled="true"></bs-checkbox>
+                <bs-checkbox name="checkbox1" label="Checkbox 2" value="2" checked="checked" disabled="disabled"></bs-checkbox>
+              </div>
+              <div class="form-group">
+                <bs-checkbox name="checkbox2" label="Checkbox 3" value="1" inline="true"></bs-checkbox>
+                <bs-checkbox name="checkbox2" label="Checkbox 4" value="2" inline="true" checked="checked" disabled="disabled"></bs-checkbox>
               </div>
               <div class="form-group">
                 <bs-radio name="radio1" label="Radio 1" model="1" value="1"></bs-radio>
@@ -55,30 +67,43 @@
                 <bs-radio name="radio1" label="Radio 2" model="2" value="2" checked="checked"></bs-radio>
               </div>
               <div class="form-group">
-                <bs-radio name="radio1" label="Radio 3" model="3" value="3" disabled="true"></bs-radio>
+                <bs-radio name="radio1" label="Radio 3" model="3" value="3" disabled="disabled"></bs-radio>
               </div>
               <div class="form-group">
-                <bs-radio name="radio2" label="Radio 4" model="1" value="1" layout="inline"></bs-radio>
-                <bs-radio name="radio2" label="Radio 5" model="2" value="2" layout="inline" checked="checked"></bs-radio>
-                <bs-radio name="radio2" label="Radio 6" model="3" value="3" layout="inline" disabled="true"></bs-radio>
+                <bs-radio name="radio2" label="Radio 4" model="1" value="1" inline="true"></bs-radio>
+                <bs-radio name="radio2" label="Radio 5" model="2" value="2" inline="true" checked="checked"></bs-radio>
+                <bs-radio name="radio2" label="Radio 6" model="3" value="3" inline="true" disabled="disabled"></bs-radio>
               </div>
               <div class="form-group">
-                <bs-button size="sm" kind="default">Default</bs-button>
-                <bs-button size="sm" kind="primary">Primary</bs-button>
-                <bs-button size="sm" kind="success" icon="ok-sign">Success</bs-button>
-                <bs-button size="sm" kind="info" icon="info-sign">Info</bs-button>
-                <bs-button size="sm" kind="warning" icon="exclamation-sign">Warning</bs-button>
-                <bs-button size="sm" kind="danger" icon="ban-circle">Danger</bs-button>
-                <bs-button size="sm" kind="link" icon="link">Link</bs-button>
+                <bs-button size="sm" type="default" click.trigger="onClick()">Default</bs-button>
+                <bs-button size="sm" type="primary" click.trigger="onClick()">Primary</bs-button>
+                <bs-button size="sm" type="success" icon="ok-sign" click.trigger="onClick()">Success</bs-button>
+                <bs-button size="sm" type="info" icon="info-sign" click.trigger="onClick()">Info</bs-button>
+                <bs-button size="sm" type="warning" icon="exclamation-sign" click.trigger="onClick()">Warning</bs-button>
+                <bs-button size="sm" type="danger" icon="ban-circle" click.trigger="onClick()">Danger</bs-button>
+                <bs-button size="sm" type="link" icon="link" click.trigger="onClick()">Link</bs-button>
               </div>
-              <bs-button-group>
-                <bs-button size="sm" kind="default">Default</bs-button>
-                <bs-button size="sm" kind="primary">Primary</bs-button>
-                <bs-button size="sm" kind="success" icon="ok-sign">Success</bs-button>
-                <bs-button size="sm" kind="info" icon="info-sign">Info</bs-button>
-                <bs-button size="sm" kind="warning" icon="exclamation-sign">Warning</bs-button>
-                <bs-button size="sm" kind="danger" icon="ban-circle">Danger</bs-button>
-              </bs-button-group>
+              <div class="btn-group" role="group">
+                <bs-button size="sm" type="default" active="true" click.trigger="onClick()">Default</bs-button>
+                <bs-button size="sm" type="primary" disabled="disabled" click.trigger="onClick()">Primary</bs-button>
+                <bs-button size="sm" type="success" icon="ok-sign" click.trigger="onClick()">Success</bs-button>
+                <bs-button size="sm" type="info" icon="info-sign" click.trigger="onClick()">Info</bs-button>
+                <bs-button size="sm" type="warning" icon="exclamation-sign" click.trigger="onClick()">Warning</bs-button>
+                <bs-button size="sm" type="danger" icon="ban-circle" click.trigger="onClick()">Danger</bs-button>
+              </div>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>Components</legend>
+            <div class="well">
+              <div class="btn-toolbar" role="toolbar">
+                <div class="btn-group" role="group">
+                  <bs-button icon="align-left"></bs-button>
+                  <bs-button icon="align-center"></bs-button>
+                  <bs-button icon="align-right"></bs-button>
+                  <bs-button icon="align-justify"></bs-button>
+                </div>
+              </div>
             </div>
           </fieldset>
         </form>

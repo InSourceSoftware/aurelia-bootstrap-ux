@@ -1,0 +1,5 @@
+<template>
+  <label ref="lbl" for="${name}" show.bind="label">${label}</label>
+  <textarea ref="input" id="${name}" class="form-control" rows.bind="rows" innerhtml.bind="value"></textarea>
+  <span id="${name}-help" class="help-block" show.bind="helptext">${helptext}</span>
+</template>

@@ -1,5 +1,5 @@
-<template class="${layout == 'default' ? 'checkbox' : ''} ${disabled ? 'disabled' : ''}">
-  <label class="checkbox-${layout} ${disabled ? 'disabled' : ''}">
-    <input type="checkbox" name="${name}" value.bind="value" checked.bind="checked" disabled.bind="disabled"/> ${label}
+<template ref="template">
+  <label ref="lbl">
+    <input ref="input" type="checkbox" name="${name}" model.bind="model" value.bind="value" checked.bind="checked" disabled.bind="disabled" /> ${label}
   </label>
 </template>

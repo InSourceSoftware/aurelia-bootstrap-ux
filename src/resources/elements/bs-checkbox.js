@@ -1,15 +1,30 @@
-import {bindable} from 'aurelia-framework';
+import {bindable, bindingMode} from 'aurelia-framework';
 
 export class BsCheckbox {
   @bindable name;
+  @bindable({ defaultBindingMode: bindingMode.twoWay}) value;
+  @bindable({ defaultBindingMode: bindingMode.twoWay}) checked = false;
+  @bindable model;
   @bindable label = '';
-  @bindable value;
-  @bindable checked = false;
   @bindable disabled = false;
-  @bindable layout = 'default';
+  @bindable inline = false;
 
   bind() {
     this.checked = this.checked === 'true' || this.checked === 'checked';
-    this.disabled = this.disabled === 'true' || this.disabled === 'disabled';
+    if (!this.model) {
+      this.model = this.value;
+    }
+  }
+
+  attached() {
+    if (this.inline) {
+      this.lbl.classList.add('checkbox-inline');
+    } else {
+      this.template.classList.add('checkbox');
+    }
+    if (this.disabled) {
+      this.template.classList.add('disabled');
+      this.lbl.classList.add('disabled');
+    }
   }
 }

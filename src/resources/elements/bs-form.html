@@ -1,3 +1,5 @@
-<template role="form" class="form-${layout}">
-  <slot></slot>
+<template>
+  <form class="form-${layout}" submit.trigger="onSubmit()">
+    <slot></slot>
+  </form>
 </template>

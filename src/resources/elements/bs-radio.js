@@ -1,19 +1,29 @@
-import {bindable} from 'aurelia-framework';
+import {bindable, bindingMode} from 'aurelia-framework';
 
 export class BsRadio {
   @bindable name;
-  @bindable label = '';
-  @bindable value;
+  @bindable({ defaultBindingMode: bindingMode.twoWay }) value;
+  @bindable({ defaultBindingMode: bindingMode.twoWay}) checked = false;
   @bindable model;
-  @bindable checked = false;
+  @bindable label = '';
   @bindable disabled = false;
-  @bindable layout = 'default';
+  @bindable inline = false;
 
   bind() {
-    this.checked = this.checked === 'true' || this.checked === 'checked';
-    this.disabled = this.disabled === 'true' || this.disabled === 'disabled';
     if (!this.model) {
       this.model = this.value;
+    }
+  }
+
+  attached() {
+    if (this.inline) {
+      this.lbl.classList.add('radio-inline');
+    } else {
+      this.template.classList.add('radio');
+    }
+    if (this.disabled) {
+      this.template.classList.add('disabled');
+      this.lbl.classList.add('disabled');
     }
   }
 }

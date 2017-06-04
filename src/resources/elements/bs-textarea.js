@@ -1,12 +1,10 @@
 import {bindable, bindingMode} from 'aurelia-framework';
 
-export class BsInput {
+export class BsTextarea {
   @bindable name;
   @bindable({ defaultBindingMode: bindingMode.twoWay }) value;
-  @bindable type = 'text';
-  @bindable size = 'md';
+  @bindable rows = 3;
   @bindable label = '';
-  @bindable placeholder = '';
   @bindable helptext = '';
   @bindable disabled = false;
   @bindable readonly = false;
