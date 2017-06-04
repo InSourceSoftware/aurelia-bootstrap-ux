@@ -1,6 +1,6 @@
 import {bindable} from 'aurelia-framework';
 
-export class BsButton {
+export class BsDropButton {
   @bindable size = 'md';
   @bindable type = 'default';
   @bindable block = false;
