@@ -1,0 +1,5 @@
+<template>
+  <label ref="lbl" for="${name}" show.bind="label">${label}</label>
+  <input ref="input" type="${type}" id="${name}" class="form-control input-${size}" placeholder="${placeholder}" disabled.bind="disabled" readonly.bind="readonly" value.bind="value" />
+  <span id="${name}-help" class="help-block" show.bind="helptext">${helptext}</span>
+</template>
