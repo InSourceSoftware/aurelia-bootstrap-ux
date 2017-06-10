@@ -3,7 +3,7 @@
 System.register(['aurelia-framework'], function (_export, _context) {
   "use strict";
 
-  var bindable, _createClass, _desc, _value, _class, _descriptor, _descriptor2, _descriptor3, _descriptor4, _descriptor5, _descriptor6, BsSelect;
+  var bindable, bindingMode, _createClass, _dec, _desc, _value, _class, _descriptor, _descriptor2, _descriptor3, _descriptor4, _descriptor5, _descriptor6, _descriptor7, _descriptor8, _descriptor9, _descriptor10, BsSelect;
 
   function _initDefineProp(target, property, descriptor, context) {
     if (!descriptor) return;
@@ -57,6 +57,7 @@ System.register(['aurelia-framework'], function (_export, _context) {
   return {
     setters: [function (_aureliaFramework) {
       bindable = _aureliaFramework.bindable;
+      bindingMode = _aureliaFramework.bindingMode;
     }],
     execute: function () {
       _createClass = function () {
@@ -77,7 +78,7 @@ System.register(['aurelia-framework'], function (_export, _context) {
         };
       }();
 
-      _export('BsSelect', BsSelect = (_class = function () {
+      _export('BsSelect', BsSelect = (_dec = bindable({ defaultBindingMode: bindingMode.twoWay }), (_class = function () {
         function BsSelect() {
           _classCallCheck(this, BsSelect);
 
@@ -85,19 +86,38 @@ System.register(['aurelia-framework'], function (_export, _context) {
 
           _initDefineProp(this, 'label', _descriptor2, this);
 
-          _initDefineProp(this, 'placeholder', _descriptor3, this);
+          _initDefineProp(this, 'size', _descriptor3, this);
 
-          _initDefineProp(this, 'value', _descriptor4, this);
+          _initDefineProp(this, 'placeholder', _descriptor4, this);
 
-          _initDefineProp(this, 'options', _descriptor5, this);
+          _initDefineProp(this, 'value', _descriptor5, this);
 
-          _initDefineProp(this, 'multiple', _descriptor6, this);
+          _initDefineProp(this, 'options', _descriptor6, this);
+
+          _initDefineProp(this, 'multiple', _descriptor7, this);
+
+          _initDefineProp(this, 'disabled', _descriptor8, this);
+
+          _initDefineProp(this, 'readonly', _descriptor9, this);
+
+          _initDefineProp(this, 'srOnly', _descriptor10, this);
         }
 
         _createClass(BsSelect, [{
-          key: 'bind',
-          value: function bind() {
-            this.multiple = !!this.multiple;
+          key: 'attached',
+          value: function attached() {
+            if (this.label && this.srOnly) {
+              this.lbl.classList.add('sr-only');
+            }
+            if (this.disabled) {
+              this.input.classList.add('disabled');
+            }
+            if (this.readonly) {
+              this.input.classList.add('readonly');
+            }
+            if (this.helptext) {
+              this.input.setAttribute('aria-describedby', this.name + '-help');
+            }
           }
         }]);
 
@@ -108,23 +128,43 @@ System.register(['aurelia-framework'], function (_export, _context) {
       }), _descriptor2 = _applyDecoratedDescriptor(_class.prototype, 'label', [bindable], {
         enumerable: true,
         initializer: null
-      }), _descriptor3 = _applyDecoratedDescriptor(_class.prototype, 'placeholder', [bindable], {
+      }), _descriptor3 = _applyDecoratedDescriptor(_class.prototype, 'size', [bindable], {
+        enumerable: true,
+        initializer: function initializer() {
+          return 'md';
+        }
+      }), _descriptor4 = _applyDecoratedDescriptor(_class.prototype, 'placeholder', [bindable], {
         enumerable: true,
         initializer: null
-      }), _descriptor4 = _applyDecoratedDescriptor(_class.prototype, 'value', [bindable], {
+      }), _descriptor5 = _applyDecoratedDescriptor(_class.prototype, 'value', [_dec], {
         enumerable: true,
         initializer: null
-      }), _descriptor5 = _applyDecoratedDescriptor(_class.prototype, 'options', [bindable], {
+      }), _descriptor6 = _applyDecoratedDescriptor(_class.prototype, 'options', [bindable], {
         enumerable: true,
         initializer: function initializer() {
           return [];
         }
-      }), _descriptor6 = _applyDecoratedDescriptor(_class.prototype, 'multiple', [bindable], {
+      }), _descriptor7 = _applyDecoratedDescriptor(_class.prototype, 'multiple', [bindable], {
         enumerable: true,
         initializer: function initializer() {
           return false;
         }
-      })), _class));
+      }), _descriptor8 = _applyDecoratedDescriptor(_class.prototype, 'disabled', [bindable], {
+        enumerable: true,
+        initializer: function initializer() {
+          return false;
+        }
+      }), _descriptor9 = _applyDecoratedDescriptor(_class.prototype, 'readonly', [bindable], {
+        enumerable: true,
+        initializer: function initializer() {
+          return false;
+        }
+      }), _descriptor10 = _applyDecoratedDescriptor(_class.prototype, 'srOnly', [bindable], {
+        enumerable: true,
+        initializer: function initializer() {
+          return false;
+        }
+      })), _class)));
 
       _export('BsSelect', BsSelect);
     }

@@ -52,17 +52,11 @@ function _initializerWarningHelper(descriptor, context) {
   throw new Error('Decorating class property failed. Please ensure that transform-class-properties is enabled.');
 }
 
-var BsIcon = exports.BsIcon = (_class = function () {
-  function BsIcon() {
-    _classCallCheck(this, BsIcon);
+var BsIcon = exports.BsIcon = (_class = function BsIcon() {
+  _classCallCheck(this, BsIcon);
 
-    _initDefineProp(this, 'value', _descriptor, this);
-  }
-
-  BsIcon.prototype.valueChanged = function valueChanged(newValue, oldValue) {};
-
-  return BsIcon;
-}(), (_descriptor = _applyDecoratedDescriptor(_class.prototype, 'value', [_aureliaFramework.bindable], {
+  _initDefineProp(this, 'icon', _descriptor, this);
+}, (_descriptor = _applyDecoratedDescriptor(_class.prototype, 'icon', [_aureliaFramework.bindable], {
   enumerable: true,
   initializer: null
 })), _class);

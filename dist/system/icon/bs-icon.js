@@ -3,7 +3,7 @@
 System.register(['aurelia-framework'], function (_export, _context) {
   "use strict";
 
-  var bindable, _createClass, _desc, _value, _class, _descriptor, BsIcon;
+  var bindable, _desc, _value, _class, _descriptor, BsIcon;
 
   function _initDefineProp(target, property, descriptor, context) {
     if (!descriptor) return;
@@ -59,38 +59,11 @@ System.register(['aurelia-framework'], function (_export, _context) {
       bindable = _aureliaFramework.bindable;
     }],
     execute: function () {
-      _createClass = function () {
-        function defineProperties(target, props) {
-          for (var i = 0; i < props.length; i++) {
-            var descriptor = props[i];
-            descriptor.enumerable = descriptor.enumerable || false;
-            descriptor.configurable = true;
-            if ("value" in descriptor) descriptor.writable = true;
-            Object.defineProperty(target, descriptor.key, descriptor);
-          }
-        }
+      _export('BsIcon', BsIcon = (_class = function BsIcon() {
+        _classCallCheck(this, BsIcon);
 
-        return function (Constructor, protoProps, staticProps) {
-          if (protoProps) defineProperties(Constructor.prototype, protoProps);
-          if (staticProps) defineProperties(Constructor, staticProps);
-          return Constructor;
-        };
-      }();
-
-      _export('BsIcon', BsIcon = (_class = function () {
-        function BsIcon() {
-          _classCallCheck(this, BsIcon);
-
-          _initDefineProp(this, 'value', _descriptor, this);
-        }
-
-        _createClass(BsIcon, [{
-          key: 'valueChanged',
-          value: function valueChanged(newValue, oldValue) {}
-        }]);
-
-        return BsIcon;
-      }(), (_descriptor = _applyDecoratedDescriptor(_class.prototype, 'value', [bindable], {
+        _initDefineProp(this, 'icon', _descriptor, this);
+      }, (_descriptor = _applyDecoratedDescriptor(_class.prototype, 'icon', [bindable], {
         enumerable: true,
         initializer: null
       })), _class));

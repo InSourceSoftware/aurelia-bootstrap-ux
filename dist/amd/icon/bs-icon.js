@@ -22,24 +22,6 @@ define(['exports', 'aurelia-framework'], function (exports, _aureliaFramework) {
     }
   }
 
-  var _createClass = function () {
-    function defineProperties(target, props) {
-      for (var i = 0; i < props.length; i++) {
-        var descriptor = props[i];
-        descriptor.enumerable = descriptor.enumerable || false;
-        descriptor.configurable = true;
-        if ("value" in descriptor) descriptor.writable = true;
-        Object.defineProperty(target, descriptor.key, descriptor);
-      }
-    }
-
-    return function (Constructor, protoProps, staticProps) {
-      if (protoProps) defineProperties(Constructor.prototype, protoProps);
-      if (staticProps) defineProperties(Constructor, staticProps);
-      return Constructor;
-    };
-  }();
-
   function _applyDecoratedDescriptor(target, property, decorators, descriptor, context) {
     var desc = {};
     Object['ke' + 'ys'](descriptor).forEach(function (key) {
@@ -75,20 +57,11 @@ define(['exports', 'aurelia-framework'], function (exports, _aureliaFramework) {
 
   var _desc, _value, _class, _descriptor;
 
-  var BsIcon = exports.BsIcon = (_class = function () {
-    function BsIcon() {
-      _classCallCheck(this, BsIcon);
+  var BsIcon = exports.BsIcon = (_class = function BsIcon() {
+    _classCallCheck(this, BsIcon);
 
-      _initDefineProp(this, 'value', _descriptor, this);
-    }
-
-    _createClass(BsIcon, [{
-      key: 'valueChanged',
-      value: function valueChanged(newValue, oldValue) {}
-    }]);
-
-    return BsIcon;
-  }(), (_descriptor = _applyDecoratedDescriptor(_class.prototype, 'value', [_aureliaFramework.bindable], {
+    _initDefineProp(this, 'icon', _descriptor, this);
+  }, (_descriptor = _applyDecoratedDescriptor(_class.prototype, 'icon', [_aureliaFramework.bindable], {
     enumerable: true,
     initializer: null
   })), _class);

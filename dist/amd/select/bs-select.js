@@ -73,9 +73,9 @@ define(['exports', 'aurelia-framework'], function (exports, _aureliaFramework) {
     throw new Error('Decorating class property failed. Please ensure that transform-class-properties is enabled.');
   }
 
-  var _desc, _value, _class, _descriptor, _descriptor2, _descriptor3, _descriptor4, _descriptor5, _descriptor6;
+  var _dec, _desc, _value, _class, _descriptor, _descriptor2, _descriptor3, _descriptor4, _descriptor5, _descriptor6, _descriptor7, _descriptor8, _descriptor9, _descriptor10;
 
-  var BsSelect = exports.BsSelect = (_class = function () {
+  var BsSelect = exports.BsSelect = (_dec = (0, _aureliaFramework.bindable)({ defaultBindingMode: _aureliaFramework.bindingMode.twoWay }), (_class = function () {
     function BsSelect() {
       _classCallCheck(this, BsSelect);
 
@@ -83,19 +83,38 @@ define(['exports', 'aurelia-framework'], function (exports, _aureliaFramework) {
 
       _initDefineProp(this, 'label', _descriptor2, this);
 
-      _initDefineProp(this, 'placeholder', _descriptor3, this);
+      _initDefineProp(this, 'size', _descriptor3, this);
 
-      _initDefineProp(this, 'value', _descriptor4, this);
+      _initDefineProp(this, 'placeholder', _descriptor4, this);
 
-      _initDefineProp(this, 'options', _descriptor5, this);
+      _initDefineProp(this, 'value', _descriptor5, this);
 
-      _initDefineProp(this, 'multiple', _descriptor6, this);
+      _initDefineProp(this, 'options', _descriptor6, this);
+
+      _initDefineProp(this, 'multiple', _descriptor7, this);
+
+      _initDefineProp(this, 'disabled', _descriptor8, this);
+
+      _initDefineProp(this, 'readonly', _descriptor9, this);
+
+      _initDefineProp(this, 'srOnly', _descriptor10, this);
     }
 
     _createClass(BsSelect, [{
-      key: 'bind',
-      value: function bind() {
-        this.multiple = !!this.multiple;
+      key: 'attached',
+      value: function attached() {
+        if (this.label && this.srOnly) {
+          this.lbl.classList.add('sr-only');
+        }
+        if (this.disabled) {
+          this.input.classList.add('disabled');
+        }
+        if (this.readonly) {
+          this.input.classList.add('readonly');
+        }
+        if (this.helptext) {
+          this.input.setAttribute('aria-describedby', this.name + '-help');
+        }
       }
     }]);
 
@@ -106,21 +125,41 @@ define(['exports', 'aurelia-framework'], function (exports, _aureliaFramework) {
   }), _descriptor2 = _applyDecoratedDescriptor(_class.prototype, 'label', [_aureliaFramework.bindable], {
     enumerable: true,
     initializer: null
-  }), _descriptor3 = _applyDecoratedDescriptor(_class.prototype, 'placeholder', [_aureliaFramework.bindable], {
+  }), _descriptor3 = _applyDecoratedDescriptor(_class.prototype, 'size', [_aureliaFramework.bindable], {
+    enumerable: true,
+    initializer: function initializer() {
+      return 'md';
+    }
+  }), _descriptor4 = _applyDecoratedDescriptor(_class.prototype, 'placeholder', [_aureliaFramework.bindable], {
     enumerable: true,
     initializer: null
-  }), _descriptor4 = _applyDecoratedDescriptor(_class.prototype, 'value', [_aureliaFramework.bindable], {
+  }), _descriptor5 = _applyDecoratedDescriptor(_class.prototype, 'value', [_dec], {
     enumerable: true,
     initializer: null
-  }), _descriptor5 = _applyDecoratedDescriptor(_class.prototype, 'options', [_aureliaFramework.bindable], {
+  }), _descriptor6 = _applyDecoratedDescriptor(_class.prototype, 'options', [_aureliaFramework.bindable], {
     enumerable: true,
     initializer: function initializer() {
       return [];
     }
-  }), _descriptor6 = _applyDecoratedDescriptor(_class.prototype, 'multiple', [_aureliaFramework.bindable], {
+  }), _descriptor7 = _applyDecoratedDescriptor(_class.prototype, 'multiple', [_aureliaFramework.bindable], {
     enumerable: true,
     initializer: function initializer() {
       return false;
     }
-  })), _class);
+  }), _descriptor8 = _applyDecoratedDescriptor(_class.prototype, 'disabled', [_aureliaFramework.bindable], {
+    enumerable: true,
+    initializer: function initializer() {
+      return false;
+    }
+  }), _descriptor9 = _applyDecoratedDescriptor(_class.prototype, 'readonly', [_aureliaFramework.bindable], {
+    enumerable: true,
+    initializer: function initializer() {
+      return false;
+    }
+  }), _descriptor10 = _applyDecoratedDescriptor(_class.prototype, 'srOnly', [_aureliaFramework.bindable], {
+    enumerable: true,
+    initializer: function initializer() {
+      return false;
+    }
+  })), _class));
 });
