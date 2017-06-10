@@ -1,7 +1,8 @@
 <template>
-  <label for="${name}">${label}</label>
-  <select id="${name}" class="form-control" multiple.bind="multiple" value.bind="value">
+  <label ref="lbl" for="${name}" show.bind="label">${label}</label>
+  <select ref="input" id="${name}" class="form-control input-${size}" multiple.bind="multiple" value.bind="value">
     <option show.bind="placeholder">${placeholder}</option>
     <option repeat.for="option of options" value="${option}">${option}</option>
   </select>
+  <span id="${name}-help" class="help-block" show.bind="helptext">${helptext}</span>
 </template>
