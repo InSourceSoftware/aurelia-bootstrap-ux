@@ -1,4 +1,4 @@
-define(['exports', 'aurelia-framework'], function (exports, _aureliaFramework) {
+define(['exports', 'aurelia-framework', './element-utils'], function (exports, _aureliaFramework, _elementUtils) {
   'use strict';
 
   Object.defineProperty(exports, "__esModule", {
@@ -17,21 +17,7 @@ define(['exports', 'aurelia-framework'], function (exports, _aureliaFramework) {
   var BsFormGroupCustomAttribute = exports.BsFormGroupCustomAttribute = (_dec = (0, _aureliaFramework.inject)(Element), _dec(_class = function BsFormGroupCustomAttribute(element) {
     _classCallCheck(this, BsFormGroupCustomAttribute);
 
-    if (element.tagName.toLowerCase() === 'div') {
-      element.classList.add('form-group');
-    } else {
-      var div = document.createElement('div');
-      div.className = 'form-group';
-
-      var parent = element.parentNode;
-      var sibling = element.nextSibling;
-      parent.removeChild(element);
-      div.appendChild(element);
-      if (sibling) {
-        parent.insertBefore(div, sibling);
-      } else {
-        parent.appendChild(div);
-      }
-    }
+    var div = _elementUtils.ElementUtils.createDiv(element);
+    div.classList.add('form-group');
   }) || _class);
 });

@@ -1,4 +1,5 @@
 import {inject} from 'aurelia-framework';
+import {ElementUtils} from "./element-utils";
 
 @inject(Element)
 export class BsDropdownMenuCustomAttribute {
@@ -6,4 +7,3 @@ export class BsDropdownMenuCustomAttribute {
     element.classList.add('dropdown-menu');
   }
 }
-

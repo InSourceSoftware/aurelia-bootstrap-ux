@@ -6,11 +6,58 @@ Most elements can utilize any of the following custom attributes which add CSS c
 
 * `bs-button-group`
 * `bs-button-toolbar`
+* `bs-cols`
 * `bs-dropdown-menu`
 * `bs-form-group`
+* `bs-horizontal-form`
 * `bs-inline-form`
 * `bs-input-group`
 * `bs-well`
+
+### `bs-button-group`
+
+The `bs-button-group` attribute adds a CSS class to the element it is applied to in order to render it as a button group. The attribute can be added without a value, or a value can be added to further customize the generated button group.
+
+Available values:
+* `justified` - Adds an additional CSS class to render the button group as a set of justified buttons
+
+### `bs-button-toolbar`
+
+The `bs-button-toolbar` attribute adds a CSS class to the element it is applied to in order to render it as a button toolbar.
+
+### `bs-cols`
+
+The `bs-cols` attribute adds one or more CSS classes to the element it is applied to in order to render it as a columnar grid. The attribute accepts a value with column specifications similar to Bootstrap's grid system.
+
+For example, the following builds a 3-column responsive grid that breaks on medium sized screens into 3 stacked vertical sections:
+
+```html
+<div bs-cols="md-4">
+  ...
+</div>
+<div bs-cols="md-4">
+  ...
+</div>
+<div bs-cols="md-4">
+  ...
+</div>
+```
+
+Unlike Bootstrap 3 grids, the `bs-cols` attribute can be applied to any element. If the element is a `<label>` or `<div>`, the CSS class(es) are added directly. For other elements, the element is rendered inside a `<div>` with the class(es) applied.
+
+The attribute accepts a space-delimited list of column specifications just as CSS classes do. For more information on Bootstrap grids, see the [Bootstrap 3 documentation][1].
+
+[1]: http://getbootstrap.com/css/#grid
+
+### `bs-dropdown-menu`
+
+The `bs-dropdown-menu` attribute adds a CSS class to the element it is applied to in order to render it as a dropdown menu.
+
+Unlike other custom attributes, this attribute does not seek to conditionally render the element inside a `<div>`, as dropdown menus are typically applied directly to `<ul>` elements.
+
+### `bs-form-group`
+
+The `bs-form-group` attribute renders a `<div class="form-group">`.
 
 For example, when adding the `bs-form-group` custom attribute to an `<input>`, the element is rendered inside a `<div class="form-group">`.
 
@@ -18,13 +65,47 @@ For example, when adding the `bs-form-group` custom attribute to an `<input>`, t
 <input bs-form-group type="..." />
 ```
 
-When adding the `bs-form-group` custom attribute to an existing `<div>`, the CSS class is automatically added to the element.
+Which produces:
+
+```html
+<div class="form-group">
+  <input bs-form-group type="..." />
+</div>
+```
+
+However, when adding the `bs-form-group` custom attribute to an existing `<div>`, the CSS class is automatically added to the element.
 
 ```html
 <div bs-form-group>
   ...
 </div>
 ```
+
+Which produces:
+
+```html
+<div class="form-group">
+  ...
+</div>
+```
+
+### `bs-horizontal-form`
+
+The `bs-horizontal-form` attribute adds a CSS class to the element it is applied to in order to render it as a horizontal form. Further use of `bs-cols` is required to add columns to labels and form elements.
+
+### `bs-inline-form`
+
+The `bs-inline-form` attribute adds a CSS class to the element it is applied to in order to render it as an inline form.
+
+### `bs-input-group`
+
+The `bs-input-group` attribute adds a CSS class to the element it is applied to in order to render it as an input group.
+
+### `bs-well`
+
+The `bs-well` attribute adds a CSS class to the element it is applied to in order to render it as a well.
+
+Unlike other custom attributes, this attribute does not seek to conditionally render the element inside a `<div>`, so applying it to an existing `<div>` is the only option, as wells are not typically wrapped around single elements.
 
 ## Custom Elements
 

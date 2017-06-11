@@ -1,7 +1,9 @@
 export { BsButtonGroupCustomAttribute } from './attributes/bs-button-group';
 export { BsButtonToolbarCustomAttribute } from './attributes/bs-button-toolbar';
+export { BsColsCustomAttribute } from './attributes/bs-cols';
 export { BsDropdownMenuCustomAttribute } from './attributes/bs-dropdown-menu';
 export { BsFormGroupCustomAttribute } from './attributes/bs-form-group';
+export { BsHorizontalFormCustomAttribute } from './attributes/bs-horizontal-form';
 export { BsInlineFormCustomAttribute } from './attributes/bs-inline-form';
 export { BsInputGroupCustomAttribute } from './attributes/bs-input-group';
 export { BsWellCustomAttribute } from './attributes/bs-well';
@@ -24,8 +26,10 @@ export function configure(config) {
   config.globalResources([
     './attributes/bs-button-group',
     './attributes/bs-button-toolbar',
+    './attributes/bs-cols',
     './attributes/bs-dropdown-menu',
     './attributes/bs-form-group',
+    './attributes/bs-horizontal-form',
     './attributes/bs-inline-form',
     './attributes/bs-input-group',
     './attributes/bs-well'

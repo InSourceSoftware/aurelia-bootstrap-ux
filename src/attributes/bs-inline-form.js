@@ -1,8 +1,10 @@
 import {inject} from 'aurelia-framework';
+import {ElementUtils} from "./element-utils";
 
 @inject(Element)
 export class BsInlineFormCustomAttribute {
   constructor(element) {
-    element.classList.add('form-inline');
+    let div = ElementUtils.createDiv(element);
+    div.classList.add('form-inline');
   }
 }

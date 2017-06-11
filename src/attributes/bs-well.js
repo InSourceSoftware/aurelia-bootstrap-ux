@@ -6,4 +6,3 @@ export class BsWellCustomAttribute {
     element.classList.add('well');
   }
 }
-

@@ -25,7 +25,7 @@
     "build:commonjs": "gulp build-commonjs",
     "build:amd": "gulp build-amd",
     "build:system": "gulp build-system",
-    "build": "gulp build",
+    "build": "gulp build-html && gulp build-es2015 && gulp build-commonjs && gulp build-amd && gulp build-system",
     "clean": "gulp clean"
   },
   "dependencies": {

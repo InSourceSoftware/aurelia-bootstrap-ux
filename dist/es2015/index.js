@@ -20,6 +20,15 @@ Object.defineProperty(exports, 'BsButtonToolbarCustomAttribute', {
   }
 });
 
+var _bsCols = require('./attributes/bs-cols');
+
+Object.defineProperty(exports, 'BsColsCustomAttribute', {
+  enumerable: true,
+  get: function get() {
+    return _bsCols.BsColsCustomAttribute;
+  }
+});
+
 var _bsDropdownMenu = require('./attributes/bs-dropdown-menu');
 
 Object.defineProperty(exports, 'BsDropdownMenuCustomAttribute', {
@@ -183,6 +192,6 @@ Object.defineProperty(exports, 'BsTextarea', {
 });
 exports.configure = configure;
 function configure(config) {
-  config.globalResources(['./attributes/bs-button-group', './attributes/bs-button-toolbar', './attributes/bs-dropdown-menu', './attributes/bs-form-group', './attributes/bs-inline-form', './attributes/bs-input-group', './attributes/bs-well']);
+  config.globalResources(['./attributes/bs-button-group', './attributes/bs-button-toolbar', './attributes/bs-cols', './attributes/bs-dropdown-menu', './attributes/bs-form-group', './attributes/bs-inline-form', './attributes/bs-input-group', './attributes/bs-well']);
   config.globalResources(['./button/bs-button', './checkbox/bs-checkbox', './drop-button/bs-drop-button', './footer/bs-footer', './header/bs-header', './icon/bs-icon', './input/bs-input', './nav/bs-nav', './navbar/bs-navbar', './radio/bs-radio', './select/bs-select', './submit/bs-submit', './textarea/bs-textarea']);
 }
