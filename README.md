@@ -5,7 +5,7 @@ Library of custom Bootstrap 3 components for Aurelia.
 ## What's this?
 
 This library is a set of custom Bootstrap 3 components for Aurelia.
-The primary purpose of this library is to provide high quality, simple, and easy-to-use components for working with Bootstrap 3. [1]
+The primary purpose of this library is to provide high quality, simple, and easy-to-use components for working with Bootstrap 3.
 
 Since Bootstrap 4 is right around the corner and there are many other alternatives to Bootstrap, you may be asking "Why Bootstrap 3?"
 The real purpose behind this library is to practice building an Aurelia plugin, and learn to build Aurelia components.

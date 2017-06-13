@@ -21,6 +21,22 @@ The `bs-button-group` attribute adds a CSS class to the element it is applied to
 Available values:
 * `justified` - Adds an additional CSS class to render the button group as a set of justified buttons
 
+For example:
+
+```html
+<div bs-button-group="justified">
+  ...
+</div>
+```
+
+Which produces:
+
+```html
+<div class="btn-group btn-group-justified">
+  ...
+</div>
+```
+
 ### `bs-button-toolbar`
 
 The `bs-button-toolbar` attribute adds a CSS class to the element it is applied to in order to render it as a button toolbar.
@@ -57,7 +73,7 @@ Unlike other custom attributes, this attribute does not seek to conditionally re
 
 ### `bs-form-group`
 
-The `bs-form-group` attribute renders a `<div class="form-group">`.
+The `bs-form-group` attribute adds a CSS class to the element it is applied to in order to render it as a form group.
 
 For example, when adding the `bs-form-group` custom attribute to an `<input>`, the element is rendered inside a `<div class="form-group">`.
 
@@ -69,7 +85,7 @@ Which produces:
 
 ```html
 <div class="form-group">
-  <input bs-form-group type="..." />
+  <input type="..." />
 </div>
 ```
 
