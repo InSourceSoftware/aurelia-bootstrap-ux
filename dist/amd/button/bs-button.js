@@ -1,4 +1,4 @@
-define(['exports', 'aurelia-framework'], function (exports, _aureliaFramework) {
+define(['exports', 'aurelia-framework', '../element-utils'], function (exports, _aureliaFramework, _elementUtils) {
   'use strict';
 
   Object.defineProperty(exports, "__esModule", {
@@ -73,7 +73,7 @@ define(['exports', 'aurelia-framework'], function (exports, _aureliaFramework) {
     throw new Error('Decorating class property failed. Please ensure that transform-class-properties is enabled.');
   }
 
-  var _desc, _value, _class, _descriptor, _descriptor2, _descriptor3, _descriptor4, _descriptor5, _descriptor6;
+  var _desc, _value, _class, _descriptor, _descriptor2, _descriptor3, _descriptor4, _descriptor5, _descriptor6, _descriptor7;
 
   var BsButton = exports.BsButton = (_class = function () {
     function BsButton() {
@@ -90,6 +90,8 @@ define(['exports', 'aurelia-framework'], function (exports, _aureliaFramework) {
       _initDefineProp(this, 'disabled', _descriptor5, this);
 
       _initDefineProp(this, 'icon', _descriptor6, this);
+
+      _initDefineProp(this, 'iconPos', _descriptor7, this);
     }
 
     _createClass(BsButton, [{
@@ -103,6 +105,9 @@ define(['exports', 'aurelia-framework'], function (exports, _aureliaFramework) {
         }
         if (this.disabled) {
           this.button.classList.add('disabled');
+        }
+        if (this.icon) {
+          _elementUtils.ElementUtils.addIcon(this.button, this.icon, this.iconPos);
         }
       }
     }]);
@@ -137,6 +142,11 @@ define(['exports', 'aurelia-framework'], function (exports, _aureliaFramework) {
     enumerable: true,
     initializer: function initializer() {
       return '';
+    }
+  }), _descriptor7 = _applyDecoratedDescriptor(_class.prototype, 'iconPos', [_aureliaFramework.bindable], {
+    enumerable: true,
+    initializer: function initializer() {
+      return 'left';
     }
   })), _class);
 });

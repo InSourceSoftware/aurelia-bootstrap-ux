@@ -49,6 +49,15 @@ Object.defineProperty(exports, 'BsFormGroupCustomAttribute', {
   }
 });
 
+var _bsHorizontalForm = require('./attributes/bs-horizontal-form');
+
+Object.defineProperty(exports, 'BsHorizontalFormCustomAttribute', {
+  enumerable: true,
+  get: function get() {
+    return _bsHorizontalForm.BsHorizontalFormCustomAttribute;
+  }
+});
+
 var _bsInlineForm = require('./attributes/bs-inline-form');
 
 Object.defineProperty(exports, 'BsInlineFormCustomAttribute', {
@@ -166,6 +175,15 @@ Object.defineProperty(exports, 'BsRadio', {
   }
 });
 
+var _bsSplitButton = require('./split-button/bs-split-button');
+
+Object.defineProperty(exports, 'BsSplitButton', {
+  enumerable: true,
+  get: function get() {
+    return _bsSplitButton.BsSplitButton;
+  }
+});
+
 var _bsSelect = require('./select/bs-select');
 
 Object.defineProperty(exports, 'BsSelect', {
@@ -194,6 +212,6 @@ Object.defineProperty(exports, 'BsTextarea', {
 });
 exports.configure = configure;
 function configure(config) {
-  config.globalResources(['./attributes/bs-button-group', './attributes/bs-button-toolbar', './attributes/bs-cols', './attributes/bs-dropdown-menu', './attributes/bs-form-group', './attributes/bs-inline-form', './attributes/bs-input-group', './attributes/bs-well']);
-  config.globalResources(['./button/bs-button', './checkbox/bs-checkbox', './drop-button/bs-drop-button', './footer/bs-footer', './header/bs-header', './icon/bs-icon', './input/bs-input', './nav/bs-nav', './navbar/bs-navbar', './radio/bs-radio', './select/bs-select', './submit/bs-submit', './textarea/bs-textarea']);
+  config.globalResources(['./attributes/bs-button-group', './attributes/bs-button-toolbar', './attributes/bs-cols', './attributes/bs-dropdown-menu', './attributes/bs-form-group', './attributes/bs-horizontal-form', './attributes/bs-inline-form', './attributes/bs-input-group', './attributes/bs-well']);
+  config.globalResources(['./button/bs-button', './checkbox/bs-checkbox', './drop-button/bs-drop-button', './footer/bs-footer', './header/bs-header', './icon/bs-icon', './input/bs-input', './nav/bs-nav', './navbar/bs-navbar', './radio/bs-radio', './select/bs-select', './split-button/bs-split-button', './submit/bs-submit', './textarea/bs-textarea']);
 }

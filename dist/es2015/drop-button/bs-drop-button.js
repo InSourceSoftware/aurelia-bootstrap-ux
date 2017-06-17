@@ -7,6 +7,8 @@ var _desc, _value, _class, _descriptor, _descriptor2, _descriptor3, _descriptor4
 
 var _aureliaFramework = require('aurelia-framework');
 
+var _elementUtils = require('../element-utils');
+
 function _initDefineProp(target, property, descriptor, context) {
   if (!descriptor) return;
   Object.defineProperty(target, property, {
@@ -78,6 +80,9 @@ var BsDropButton = exports.BsDropButton = (_class = function () {
     }
     if (this.disabled) {
       this.button.classList.add('disabled');
+    }
+    if (this.icon) {
+      _elementUtils.ElementUtils.addIcon(this.button, this.icon, 'left');
     }
   };
 

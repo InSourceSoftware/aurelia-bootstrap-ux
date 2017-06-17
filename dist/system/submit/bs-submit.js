@@ -1,9 +1,9 @@
 'use strict';
 
-System.register(['aurelia-framework'], function (_export, _context) {
+System.register(['aurelia-framework', '../element-utils'], function (_export, _context) {
   "use strict";
 
-  var bindable, _createClass, _desc, _value, _class, _descriptor, _descriptor2, _descriptor3, _descriptor4, _descriptor5, _descriptor6, BsSubmit;
+  var bindable, ElementUtils, _createClass, _desc, _value, _class, _descriptor, _descriptor2, _descriptor3, _descriptor4, _descriptor5, _descriptor6, _descriptor7, BsSubmit;
 
   function _initDefineProp(target, property, descriptor, context) {
     if (!descriptor) return;
@@ -57,6 +57,8 @@ System.register(['aurelia-framework'], function (_export, _context) {
   return {
     setters: [function (_aureliaFramework) {
       bindable = _aureliaFramework.bindable;
+    }, function (_elementUtils) {
+      ElementUtils = _elementUtils.ElementUtils;
     }],
     execute: function () {
       _createClass = function () {
@@ -92,6 +94,8 @@ System.register(['aurelia-framework'], function (_export, _context) {
           _initDefineProp(this, 'disabled', _descriptor5, this);
 
           _initDefineProp(this, 'icon', _descriptor6, this);
+
+          _initDefineProp(this, 'iconPos', _descriptor7, this);
         }
 
         _createClass(BsSubmit, [{
@@ -112,6 +116,9 @@ System.register(['aurelia-framework'], function (_export, _context) {
             }
             if (this.disabled) {
               this.button.classList.add('disabled');
+            }
+            if (this.icon) {
+              ElementUtils.addIcon(this.button, this.icon, this.iconPos);
             }
           }
         }]);
@@ -146,6 +153,11 @@ System.register(['aurelia-framework'], function (_export, _context) {
         enumerable: true,
         initializer: function initializer() {
           return '';
+        }
+      }), _descriptor7 = _applyDecoratedDescriptor(_class.prototype, 'iconPos', [bindable], {
+        enumerable: true,
+        initializer: function initializer() {
+          return 'left';
         }
       })), _class));
 

@@ -1,4 +1,4 @@
-define(['exports', 'aurelia-framework'], function (exports, _aureliaFramework) {
+define(['exports', 'aurelia-framework', '../element-utils'], function (exports, _aureliaFramework, _elementUtils) {
   'use strict';
 
   Object.defineProperty(exports, "__esModule", {
@@ -103,6 +103,9 @@ define(['exports', 'aurelia-framework'], function (exports, _aureliaFramework) {
         }
         if (this.disabled) {
           this.button.classList.add('disabled');
+        }
+        if (this.icon) {
+          _elementUtils.ElementUtils.addIcon(this.button, this.icon, 'left');
         }
       }
     }]);

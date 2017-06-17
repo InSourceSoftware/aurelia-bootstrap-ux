@@ -9,7 +9,7 @@ var _dec, _class;
 
 var _aureliaFramework = require('aurelia-framework');
 
-var _elementUtils = require('./element-utils');
+var _elementUtils = require('../element-utils');
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -17,5 +17,5 @@ var BsInputGroupCustomAttribute = exports.BsInputGroupCustomAttribute = (_dec = 
   _classCallCheck(this, BsInputGroupCustomAttribute);
 
   var div = _elementUtils.ElementUtils.createDiv(element);
-  element.classList.add('input-group');
+  div.classList.add('input-group');
 }) || _class);

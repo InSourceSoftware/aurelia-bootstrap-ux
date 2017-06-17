@@ -1,6 +1,6 @@
 'use strict';
 
-System.register(['aurelia-framework', './element-utils'], function (_export, _context) {
+System.register(['aurelia-framework', '../element-utils'], function (_export, _context) {
   "use strict";
 
   var inject, ElementUtils, _dec, _class, BsFormGroupCustomAttribute;
@@ -22,7 +22,7 @@ System.register(['aurelia-framework', './element-utils'], function (_export, _co
         _classCallCheck(this, BsFormGroupCustomAttribute);
 
         var div = ElementUtils.createDiv(element);
-        element.classList.add('form-group');
+        div.classList.add('form-group');
       }) || _class));
 
       _export('BsFormGroupCustomAttribute', BsFormGroupCustomAttribute);

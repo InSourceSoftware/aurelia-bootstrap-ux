@@ -1,4 +1,4 @@
-define(['exports', 'aurelia-framework', './element-utils'], function (exports, _aureliaFramework, _elementUtils) {
+define(['exports', 'aurelia-framework', '../element-utils'], function (exports, _aureliaFramework, _elementUtils) {
   'use strict';
 
   Object.defineProperty(exports, "__esModule", {

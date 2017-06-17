@@ -1,9 +1,9 @@
 'use strict';
 
-System.register(['aurelia-framework'], function (_export, _context) {
+System.register(['aurelia-framework', '../element-utils'], function (_export, _context) {
   "use strict";
 
-  var inject, _dec, _class, BsDropdownMenuCustomAttribute;
+  var inject, ElementUtils, _dec, _class, BsDropdownMenuCustomAttribute;
 
   function _classCallCheck(instance, Constructor) {
     if (!(instance instanceof Constructor)) {
@@ -14,6 +14,8 @@ System.register(['aurelia-framework'], function (_export, _context) {
   return {
     setters: [function (_aureliaFramework) {
       inject = _aureliaFramework.inject;
+    }, function (_elementUtils) {
+      ElementUtils = _elementUtils.ElementUtils;
     }],
     execute: function () {
       _export('BsDropdownMenuCustomAttribute', BsDropdownMenuCustomAttribute = (_dec = inject(Element), _dec(_class = function BsDropdownMenuCustomAttribute(element) {

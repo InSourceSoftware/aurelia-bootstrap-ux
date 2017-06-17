@@ -7,9 +7,11 @@ exports.BsButton = undefined;
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _desc, _value, _class, _descriptor, _descriptor2, _descriptor3, _descriptor4, _descriptor5, _descriptor6;
+var _desc, _value, _class, _descriptor, _descriptor2, _descriptor3, _descriptor4, _descriptor5, _descriptor6, _descriptor7;
 
 var _aureliaFramework = require('aurelia-framework');
+
+var _elementUtils = require('../element-utils');
 
 function _initDefineProp(target, property, descriptor, context) {
   if (!descriptor) return;
@@ -71,6 +73,8 @@ var BsButton = exports.BsButton = (_class = function () {
     _initDefineProp(this, 'disabled', _descriptor5, this);
 
     _initDefineProp(this, 'icon', _descriptor6, this);
+
+    _initDefineProp(this, 'iconPos', _descriptor7, this);
   }
 
   _createClass(BsButton, [{
@@ -84,6 +88,9 @@ var BsButton = exports.BsButton = (_class = function () {
       }
       if (this.disabled) {
         this.button.classList.add('disabled');
+      }
+      if (this.icon) {
+        _elementUtils.ElementUtils.addIcon(this.button, this.icon, this.iconPos);
       }
     }
   }]);
@@ -118,5 +125,10 @@ var BsButton = exports.BsButton = (_class = function () {
   enumerable: true,
   initializer: function initializer() {
     return '';
+  }
+}), _descriptor7 = _applyDecoratedDescriptor(_class.prototype, 'iconPos', [_aureliaFramework.bindable], {
+  enumerable: true,
+  initializer: function initializer() {
+    return 'left';
   }
 })), _class);
