@@ -1,4 +1,5 @@
 import {bindable} from 'aurelia-framework';
+import {ElementUtils} from "../element-utils";
 
 export class BsDropButton {
   @bindable size = 'md';
@@ -17,6 +18,9 @@ export class BsDropButton {
     }
     if (this.disabled) {
       this.button.classList.add('disabled');
+    }
+    if (this.icon) {
+      ElementUtils.addIcon(this.button, this.icon, 'left');
     }
   }
 }

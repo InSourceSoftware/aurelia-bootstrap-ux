@@ -23,4 +23,16 @@ export class ElementUtils {
 
     return div;
   }
+
+  static addIcon(element, icon, iconPos) {
+    let span = document.createElement('span');
+    span.classList.add('glyphicon');
+    span.classList.add(`glyphicon-${icon}`);
+    span.setAttribute('aria-hidden', 'true');
+    if (iconPos === 'left') {
+      element.insertBefore(span, element.hasChildNodes() > 0 ? element.childNodes[0] : null);
+    } else {
+      element.appendChild(span);
+    }
+  }
 }

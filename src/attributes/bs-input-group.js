@@ -1,5 +1,5 @@
 import {inject} from 'aurelia-framework';
-import {ElementUtils} from './element-utils';
+import {ElementUtils} from '../element-utils';
 
 @inject(Element)
 export class BsInputGroupCustomAttribute {

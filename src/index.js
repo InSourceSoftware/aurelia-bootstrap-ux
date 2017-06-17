@@ -18,6 +18,7 @@ export { BsInput } from './input/bs-input';
 export { BsNav } from './nav/bs-nav';
 export { BsNavbar } from './navbar/bs-navbar';
 export { BsRadio } from './radio/bs-radio';
+export { BsSplitButton } from './split-button/bs-split-button';
 export { BsSelect } from './select/bs-select';
 export { BsSubmit } from './submit/bs-submit';
 export { BsTextarea } from './textarea/bs-textarea';
@@ -46,6 +47,7 @@ export function configure(config) {
     './navbar/bs-navbar',
     './radio/bs-radio',
     './select/bs-select',
+    './split-button/bs-split-button',
     './submit/bs-submit',
     './textarea/bs-textarea'
   ]);

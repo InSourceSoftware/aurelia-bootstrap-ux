@@ -1,4 +1,5 @@
 import {bindable} from 'aurelia-framework';
+import {ElementUtils} from "../element-utils";
 
 export class BsSubmit {
   @bindable size = 'md';
@@ -7,6 +8,7 @@ export class BsSubmit {
   @bindable active = false;
   @bindable disabled = false;
   @bindable icon = '';
+  @bindable iconPos = 'left';
 
   bind() {
     this.block = !!this.block;
@@ -23,6 +25,9 @@ export class BsSubmit {
     }
     if (this.disabled) {
       this.button.classList.add('disabled');
+    }
+    if (this.icon) {
+      ElementUtils.addIcon(this.button, this.icon, this.iconPos);
     }
   }
 }

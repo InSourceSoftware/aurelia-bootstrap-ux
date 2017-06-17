@@ -178,8 +178,8 @@ The following renders a form-group with a pair of inline radio buttons:
 
 ```html
 <div bs-form-group bs-inline-form>
-  <bs-checkbox name="checkbox2" label="Checkbox 3" value="1"></bs-checkbox>
-  <bs-checkbox name="checkbox2" label="Checkbox 4" value="2" checked="checked" disabled="disabled"></bs-checkbox>
+  <bs-radio name="radio1" label="Radio Option 1" value="1"></bs-checkbox>
+  <bs-radio name="radio1" label="Radio Option 2" value="2" checked="checked" disabled="disabled"></bs-checkbox>
 </div>
 ```
 
@@ -275,7 +275,8 @@ Available attributes:
 * `block` - Adds a CSS class to the button to make it a full-width block in responsive mode
 * `active` - Adds a CSS class to the button to style it as active
 * `disabled` - Adds a CSS class to the button to style it as disabled
-* `icon` - Adds a glyphicon to the left-hand side of the button
+* `icon` - Adds a glyphicon to the left or right-hand side of the button
+* `icon-pos` - Specify the icon position, accepts `left` (default) and `right`
 
 ### `bs-submit`
 
@@ -297,28 +298,18 @@ Available attributes:
 * `block` - Adds a CSS class to the button to make it a full-width block in responsive mode
 * `active` - Adds a CSS class to the button to style it as active
 * `disabled` - Adds a CSS class to the button to style it as disabled
-* `icon` - Adds a glyphicon to the left-hand side of the button
-
-### `bs-icon`
-
-The `<bs-icon>` element renders a glyphicon.
-
-The following renders a dynamic icon based on a `checked` property:
-
-```html
-<bs-icon icon="${checked ? 'ok' : 'remove'}"></bs-icon> ${checked ? 'Checked' : 'Not Checked'}
-```
+* `icon` - Adds a glyphicon to the left or right-hand side of the button
+* `icon-pos` - Specify the icon position, accepts `left` (default) and `right`
 
 ### `bs-drop-button`
 
 The `<bs-drop-button>` element renders an html `<button>` with a drop-down menu attached to it. This requires the Bootstrap javascript library to be available globally on the page.
 
-The following renders a button-group containing a split button with a drop-down:
+The following renders a button-group containing a button with a drop-down:
 
 ```html
 <div bs-button-group>
-  <bs-button type="primary" click.trigger="send()">Send</bs-button>
-  <bs-drop-button type="primary"></bs-drop-button>
+  <bs-drop-button type="primary">Primary</bs-drop-button>
   <ul bs-dropdown-menu>
     <li><a href="#">Action</a></li>
     <li><a href="#">Another action</a></li>
@@ -336,3 +327,45 @@ Available attributes:
 * `active` - Adds a CSS class to the button to style it as active
 * `disabled` - Adds a CSS class to the button to style it as disabled
 * `icon` - Adds a glyphicon to the left-hand side of the button
+
+### `bs-split-button`
+
+The `<bs-split-button>` element renders button group and a pair of html `<button>`s with a drop-down menu attached to it. This requires the Bootstrap javascript library to be available globally on the page.
+
+The following renders a button-group containing a split button with a drop-down:
+
+```html
+<bs-split-button type="primary" click.trigger="onClick()" label="Primary">
+  <ul bs-dropdown-menu>
+    <li><a href="#">Action</a></li>
+    <li><a href="#">Another action</a></li>
+    <li><a href="#">Something else here</a></li>
+    <li role="separator" class="divider"></li>
+    <li><a href="#">Separated link</a></li>
+  </ul>
+</bs-split-button>
+```
+
+The main differences between `bs-split-button` and `bs-drop-button` are:
+* The ability to render two buttons in a single custom element
+* No need to specify a `bs-button-group`
+* The text content is specified via the `label` attribute instead of inside the element
+* The dropdown menu content is nested inside the element
+
+Available attributes:
+* `size` - Adds a CSS class to the input to modify the size, accepts `xs`, `sm`, `md`, `lg`
+* `type` - Adds a CSS class to the input to modify the button style (color), accepts `default`, `primary`, `success`, `info`, `warning`, `danger` and `link`
+* `label` - Adds text content to the main button
+* `active` - Adds a CSS class to the button to style it as active
+* `disabled` - Adds a CSS class to the button to style it as disabled
+* `icon` - Adds a glyphicon to the left-hand side of the main button
+
+### `bs-icon`
+
+The `<bs-icon>` element renders a glyphicon.
+
+The following renders a dynamic icon based on a `checked` property:
+
+```html
+<bs-icon icon="${checked ? 'ok' : 'remove'}"></bs-icon> ${checked ? 'Checked' : 'Not Checked'}
+```
