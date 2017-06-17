@@ -47,11 +47,11 @@ export class App {
 ```html
 <template>
   <div class="container-fluid">
+    <div class="page-header">
+      <h1>${message}</h1>
+    </div>
     <div class="row">
-      <div bs-cols="lg-6 md-8 sm-10 xs-12">
-        <div class="page-header">
-          <h1>${message}</h1>
-        </div>
+      <div bs-cols="lg-6 md-7 sm-8">
         <form submit.trigger="onSubmit()">
           <fieldset>
             <legend>Log In</legend>
@@ -111,6 +111,12 @@ export class App {
               </div>
             </div>
           </fieldset>
+        </form>
+      </div>
+    </div>
+    <div class="row">
+      <div bs-cols="lg-8 md-9 sm-11">
+        <form>
           <fieldset>
             <legend>Button Components</legend>
             <div bs-well bs-button-toolbar>
@@ -134,8 +140,8 @@ export class App {
               <bs-button size="xs" type="default" click.trigger="onClick()">Extra Small</bs-button>
             </div>
             <div bs-well bs-button-toolbar>
-              <bs-button type="default" click.trigger="onClick()">Default</bs-button>
-              <bs-button type="primary" click.trigger="onClick()">Primary</bs-button>
+              <bs-button type="default" icon="minus-sign" click.trigger="onClick()">Default</bs-button>
+              <bs-button type="primary" icon="plus-sign" click.trigger="onClick()">Primary</bs-button>
               <bs-button type="success" icon="ok-sign" click.trigger="onClick()">Success</bs-button>
               <bs-button type="info" icon="info-sign" click.trigger="onClick()">Info</bs-button>
               <bs-button type="warning" icon="exclamation-sign" click.trigger="onClick()">Warning</bs-button>
@@ -143,135 +149,37 @@ export class App {
               <bs-button type="link" icon="link" click.trigger="onClick()">Link</bs-button>
             </div>
             <div bs-well bs-button-toolbar>
+              <bs-button type="default" icon="minus-sign" icon-pos="right" click.trigger="onClick()">Default</bs-button>
+              <bs-button type="primary" icon="plus-sign" icon-pos="right" click.trigger="onClick()">Primary</bs-button>
+              <bs-button type="success" icon="ok-sign" icon-pos="right" click.trigger="onClick()">Success</bs-button>
+              <bs-button type="info" icon="info-sign" icon-pos="right" click.trigger="onClick()">Info</bs-button>
+              <bs-button type="warning" icon="exclamation-sign" icon-pos="right" click.trigger="onClick()">Warning</bs-button>
+              <bs-button type="danger" icon="remove-sign" icon-pos="right" click.trigger="onClick()">Danger</bs-button>
+              <bs-button type="link" icon="link" icon-pos="right" click.trigger="onClick()">Link</bs-button>
+            </div>
+            <div bs-well bs-button-toolbar>
               <div bs-button-group>
                 <bs-button type="default" active="true" click.trigger="onClick()">Default</bs-button>
                 <bs-button type="primary" disabled="disabled" click.trigger="onClick()">Primary</bs-button>
-                <bs-button type="success" icon="ok-sign" click.trigger="onClick()">Success</bs-button>
-                <bs-button type="info" icon="info-sign" click.trigger="onClick()">Info</bs-button>
-                <bs-button type="warning" icon="exclamation-sign" click.trigger="onClick()">Warning</bs-button>
-                <bs-button type="danger" icon="remove-sign" click.trigger="onClick()">Danger</bs-button>
+                <bs-button type="success" click.trigger="onClick()">Success</bs-button>
+                <bs-button type="info" click.trigger="onClick()">Info</bs-button>
+                <bs-button type="warning" click.trigger="onClick()">Warning</bs-button>
+                <bs-button type="danger" click.trigger="onClick()">Danger</bs-button>
               </div>
             </div>
             <div bs-well bs-button-toolbar>
               <div bs-button-group="justified">
                 <bs-button type="default" active="true" click.trigger="onClick()">Default</bs-button>
                 <bs-button type="primary" disabled="disabled" click.trigger="onClick()">Primary</bs-button>
-                <bs-button type="success" icon="ok-sign" click.trigger="onClick()">Success</bs-button>
-                <bs-button type="info" icon="info-sign" click.trigger="onClick()">Info</bs-button>
-                <bs-button type="warning" icon="exclamation-sign" click.trigger="onClick()">Warning</bs-button>
-                <bs-button type="danger" icon="remove-sign" click.trigger="onClick()">Danger</bs-button>
-              </div>
-            </div>
-            <div bs-well bs-button-toolbar>
-              <div bs-button-group>
-                <bs-drop-button type="default" click.trigger="onClick()">Default</bs-drop-button>
-                <ul bs-dropdown-menu>
-                  <li><a href="#">Action</a></li>
-                  <li><a href="#">Another action</a></li>
-                  <li><a href="#">Something else here</a></li>
-                  <li role="separator" class="divider"></li>
-                  <li><a href="#">Separated link</a></li>
-                </ul>
-              </div>
-              <div bs-button-group>
-                <bs-drop-button type="primary" click.trigger="onClick()">Primary</bs-drop-button>
-                <ul bs-dropdown-menu>
-                  <li><a href="#">Action</a></li>
-                  <li><a href="#">Another action</a></li>
-                  <li><a href="#">Something else here</a></li>
-                  <li role="separator" class="divider"></li>
-                  <li><a href="#">Separated link</a></li>
-                </ul>
-              </div>
-              <div bs-button-group>
-                <bs-drop-button type="success" click.trigger="onClick()">Success</bs-drop-button>
-                <ul bs-dropdown-menu>
-                  <li><a href="#">Action</a></li>
-                  <li><a href="#">Another action</a></li>
-                  <li><a href="#">Something else here</a></li>
-                  <li role="separator" class="divider"></li>
-                  <li><a href="#">Separated link</a></li>
-                </ul>
-              </div>
-              <div bs-button-group>
-                <bs-drop-button type="info" click.trigger="onClick()">Info</bs-drop-button>
-                <ul bs-dropdown-menu>
-                  <li><a href="#">Action</a></li>
-                  <li><a href="#">Another action</a></li>
-                  <li><a href="#">Something else here</a></li>
-                  <li role="separator" class="divider"></li>
-                  <li><a href="#">Separated link</a></li>
-                </ul>
-              </div>
-              <div bs-button-group>
-                <bs-drop-button type="warning" click.trigger="onClick()">Warning</bs-drop-button>
-                <ul bs-dropdown-menu>
-                  <li><a href="#">Action</a></li>
-                  <li><a href="#">Another action</a></li>
-                  <li><a href="#">Something else here</a></li>
-                  <li role="separator" class="divider"></li>
-                  <li><a href="#">Separated link</a></li>
-                </ul>
-              </div>
-              <div bs-button-group>
-                <bs-drop-button type="danger" click.trigger="onClick()">Danger</bs-drop-button>
-                <ul bs-dropdown-menu>
-                  <li><a href="#">Action</a></li>
-                  <li><a href="#">Another action</a></li>
-                  <li><a href="#">Something else here</a></li>
-                  <li role="separator" class="divider"></li>
-                  <li><a href="#">Separated link</a></li>
-                </ul>
-              </div>
-            </div>
-            <div bs-well bs-button-toolbar>
-              <div bs-button-group>
-                <bs-button type="default" click.trigger="onClick()">Default</bs-button>
-                <bs-drop-button type="default"></bs-drop-button>
-                <ul bs-dropdown-menu>
-                  <li><a href="#">Action</a></li>
-                  <li><a href="#">Another action</a></li>
-                  <li><a href="#">Something else here</a></li>
-                  <li role="separator" class="divider"></li>
-                  <li><a href="#">Separated link</a></li>
-                </ul>
-              </div>
-              <div bs-button-group>
-                <bs-button type="primary" click.trigger="onClick()">Primary</bs-button>
-                <bs-drop-button type="primary"></bs-drop-button>
-                <ul bs-dropdown-menu>
-                  <li><a href="#">Action</a></li>
-                  <li><a href="#">Another action</a></li>
-                  <li><a href="#">Something else here</a></li>
-                  <li role="separator" class="divider"></li>
-                  <li><a href="#">Separated link</a></li>
-                </ul>
-              </div>
-              <div bs-button-group>
                 <bs-button type="success" click.trigger="onClick()">Success</bs-button>
-                <bs-drop-button type="success"></bs-drop-button>
-                <ul bs-dropdown-menu>
-                  <li><a href="#">Action</a></li>
-                  <li><a href="#">Another action</a></li>
-                  <li><a href="#">Something else here</a></li>
-                  <li role="separator" class="divider"></li>
-                  <li><a href="#">Separated link</a></li>
-                </ul>
-              </div>
-              <div bs-button-group>
                 <bs-button type="info" click.trigger="onClick()">Info</bs-button>
-                <bs-drop-button type="info"></bs-drop-button>
-                <ul bs-dropdown-menu>
-                  <li><a href="#">Action</a></li>
-                  <li><a href="#">Another action</a></li>
-                  <li><a href="#">Something else here</a></li>
-                  <li role="separator" class="divider"></li>
-                  <li><a href="#">Separated link</a></li>
-                </ul>
-              </div>
-              <div bs-button-group>
                 <bs-button type="warning" click.trigger="onClick()">Warning</bs-button>
-                <bs-drop-button type="warning"></bs-drop-button>
+                <bs-button type="danger" click.trigger="onClick()">Danger</bs-button>
+              </div>
+            </div>
+            <div bs-well bs-button-toolbar>
+              <div bs-button-group>
+                <bs-drop-button type="default" icon="minus-sign" click.trigger="onClick()">Default</bs-drop-button>
                 <ul bs-dropdown-menu>
                   <li><a href="#">Action</a></li>
                   <li><a href="#">Another action</a></li>
@@ -281,8 +189,7 @@ export class App {
                 </ul>
               </div>
               <div bs-button-group>
-                <bs-button type="danger" click.trigger="onClick()">Danger</bs-button>
-                <bs-drop-button type="danger"></bs-drop-button>
+                <bs-drop-button type="primary" icon="plus-sign" click.trigger="onClick()">Primary</bs-drop-button>
                 <ul bs-dropdown-menu>
                   <li><a href="#">Action</a></li>
                   <li><a href="#">Another action</a></li>
@@ -291,6 +198,102 @@ export class App {
                   <li><a href="#">Separated link</a></li>
                 </ul>
               </div>
+              <div bs-button-group>
+                <bs-drop-button type="success" icon="ok-sign" click.trigger="onClick()">Success</bs-drop-button>
+                <ul bs-dropdown-menu>
+                  <li><a href="#">Action</a></li>
+                  <li><a href="#">Another action</a></li>
+                  <li><a href="#">Something else here</a></li>
+                  <li role="separator" class="divider"></li>
+                  <li><a href="#">Separated link</a></li>
+                </ul>
+              </div>
+              <div bs-button-group>
+                <bs-drop-button type="info" icon="info-sign" click.trigger="onClick()">Info</bs-drop-button>
+                <ul bs-dropdown-menu>
+                  <li><a href="#">Action</a></li>
+                  <li><a href="#">Another action</a></li>
+                  <li><a href="#">Something else here</a></li>
+                  <li role="separator" class="divider"></li>
+                  <li><a href="#">Separated link</a></li>
+                </ul>
+              </div>
+              <div bs-button-group>
+                <bs-drop-button type="warning" icon="exclamation-sign" click.trigger="onClick()">Warning</bs-drop-button>
+                <ul bs-dropdown-menu>
+                  <li><a href="#">Action</a></li>
+                  <li><a href="#">Another action</a></li>
+                  <li><a href="#">Something else here</a></li>
+                  <li role="separator" class="divider"></li>
+                  <li><a href="#">Separated link</a></li>
+                </ul>
+              </div>
+              <div bs-button-group>
+                <bs-drop-button type="danger" icon="remove-sign" click.trigger="onClick()">Danger</bs-drop-button>
+                <ul bs-dropdown-menu>
+                  <li><a href="#">Action</a></li>
+                  <li><a href="#">Another action</a></li>
+                  <li><a href="#">Something else here</a></li>
+                  <li role="separator" class="divider"></li>
+                  <li><a href="#">Separated link</a></li>
+                </ul>
+              </div>
+            </div>
+            <div bs-well bs-button-toolbar>
+              <bs-split-button type="default" click.trigger="onClick()" label="Default">
+                <ul bs-dropdown-menu>
+                  <li><a href="#">Action</a></li>
+                  <li><a href="#">Another action</a></li>
+                  <li><a href="#">Something else here</a></li>
+                  <li role="separator" class="divider"></li>
+                  <li><a href="#">Separated link</a></li>
+                </ul>
+              </bs-split-button>
+              <bs-split-button type="primary" click.trigger="onClick()" label="Primary">
+                <ul bs-dropdown-menu>
+                  <li><a href="#">Action</a></li>
+                  <li><a href="#">Another action</a></li>
+                  <li><a href="#">Something else here</a></li>
+                  <li role="separator" class="divider"></li>
+                  <li><a href="#">Separated link</a></li>
+                </ul>
+              </bs-split-button>
+              <bs-split-button type="success" click.trigger="onClick()" label="Success">
+                <ul bs-dropdown-menu>
+                  <li><a href="#">Action</a></li>
+                  <li><a href="#">Another action</a></li>
+                  <li><a href="#">Something else here</a></li>
+                  <li role="separator" class="divider"></li>
+                  <li><a href="#">Separated link</a></li>
+                </ul>
+              </bs-split-button>
+              <bs-split-button type="info" click.trigger="onClick()" label="Info">
+                <ul bs-dropdown-menu>
+                  <li><a href="#">Action</a></li>
+                  <li><a href="#">Another action</a></li>
+                  <li><a href="#">Something else here</a></li>
+                  <li role="separator" class="divider"></li>
+                  <li><a href="#">Separated link</a></li>
+                </ul>
+              </bs-split-button>
+              <bs-split-button type="warning" click.trigger="onClick()" label="Warning">
+                <ul bs-dropdown-menu>
+                  <li><a href="#">Action</a></li>
+                  <li><a href="#">Another action</a></li>
+                  <li><a href="#">Something else here</a></li>
+                  <li role="separator" class="divider"></li>
+                  <li><a href="#">Separated link</a></li>
+                </ul>
+              </bs-split-button>
+              <bs-split-button type="danger" click.trigger="onClick()" label="Danger">
+                <ul bs-dropdown-menu>
+                  <li><a href="#">Action</a></li>
+                  <li><a href="#">Another action</a></li>
+                  <li><a href="#">Something else here</a></li>
+                  <li role="separator" class="divider"></li>
+                  <li><a href="#">Separated link</a></li>
+                </ul>
+              </bs-split-button>
             </div>
           </fieldset>
         </form>
