@@ -24,13 +24,23 @@ export class ElementUtils {
     return div;
   }
 
-  static addIcon(element, icon, iconPos) {
+  /**
+   * Add a span containing a glyphicon to the given element's list of children.
+   * <p>
+   * The <code>iconPos</code> param determines if it is at the beginning (left)
+   * or the end (right) of the list.
+   *
+   * @param element The target Element
+   * @param icon The name of a glyphicon
+   * @param iconPos The position of the icon, either left or right
+   */
+  static addIcon(element, icon, iconPos = 'left') {
     let span = document.createElement('span');
     span.classList.add('glyphicon');
     span.classList.add(`glyphicon-${icon}`);
     span.setAttribute('aria-hidden', 'true');
-    if (iconPos === 'left') {
-      element.insertBefore(span, element.hasChildNodes() > 0 ? element.childNodes[0] : null);
+    if (iconPos === 'left' && element.hasChildNodes()) {
+      element.insertBefore(span, element.childNodes[0]);
     } else {
       element.appendChild(span);
     }

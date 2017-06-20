@@ -1,8 +1,21 @@
 <template class="btn-group" role="group">
-  <button ref="button" role="button" type="button" class="btn btn-${size} btn-${type}">
+  <button ref="button" role="button" type="button" class="
+btn
+btn-${size}
+btn-${type}
+${active ? 'active' : ''}
+${disabled ? 'disabled' : ''}
+">
     ${label}
   </button>
-  <button ref="drop" role="button" type="button" class="btn btn-${size} btn-${type} dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  <button ref="drop" role="button" type="button" class="
+btn
+btn-${size}
+btn-${type}
+dropdown-toggle
+${active ? 'active' : ''}
+${disabled ? 'disabled' : ''}
+" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
     <span class="caret"></span>
     <span class="sr-only">Toggle Dropdown</span>
   </button>

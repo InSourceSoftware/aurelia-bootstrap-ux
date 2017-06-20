@@ -7,19 +7,11 @@ export class BsSplitButton {
   @bindable type = 'default';
   @bindable active = false;
   @bindable disabled = false;
-  @bindable icon = '';
+  @bindable icon;
 
   attached() {
-    if (this.active) {
-      this.button.classList.add('active');
-      this.drop.classList.add('active');
-    }
-    if (this.disabled) {
-      this.button.classList.add('disabled');
-      this.drop.classList.add('disabled');
-    }
     if (this.icon) {
-      ElementUtils.addIcon(this.button, this.icon, 'left');
+      ElementUtils.addIcon(this.button, this.icon);
     }
   }
 }

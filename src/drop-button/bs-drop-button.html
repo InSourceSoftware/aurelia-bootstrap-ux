@@ -1,4 +1,12 @@
-<template ref="button" role="button" type="button" class="btn btn-${size} btn-${type} dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+<template ref="button" role="button" type="button" class="
+btn
+btn-${size}
+btn-${type}
+dropdown-toggle
+${block ? 'btn-block' : ''}
+${active ? 'active' : ''}
+${disabled ? 'disabled' : ''}
+" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
   <slot></slot>
   <span class="caret"></span>
   <span class="sr-only">Toggle Dropdown</span>

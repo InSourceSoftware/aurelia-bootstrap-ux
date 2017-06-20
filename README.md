@@ -304,7 +304,7 @@ export class App {
 ```
 
 [1]: https://github.com/aurelia/ux
-[2]: DOCUMANTATION.md
+[2]: DOCS.md
 [3]: http://insource.io/aurelia-bootstrap-ux/
 [4]: https://github.com/InSourceSoftware/aurelia-bootstrap-ux/issues
 [5]: https://github.com/InSourceSoftware/aurelia-bootstrap-ux-showcase

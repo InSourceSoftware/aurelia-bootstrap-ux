@@ -1,3 +1,10 @@
-<template ref="button" role="button" type="button" class="btn btn-${size} btn-${type}">
+<template ref="button" role="button" type="button" class="
+btn
+btn-${size}
+btn-${type}
+${block ? 'btn-block' : ''}
+${active ? 'active' : ''}
+${disabled ? 'disabled' : ''}
+" aria-pressed="${toggle && active ? 'true' : 'false'}">
   <slot></slot>
 </template>

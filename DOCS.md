@@ -119,7 +119,11 @@ The `bs-input-group` attribute adds a CSS class to the element it is applied to 
 
 ### `bs-well`
 
-The `bs-well` attribute adds a CSS class to the element it is applied to in order to render it as a well.
+The `bs-well` attribute adds a CSS class to the element it is applied to in order to render it as a well. The attribute can be added without a value, or a value can be added to further customize the generated well.
+                                                                                                         
+Available values:
+* `sm` - Adds an additional CSS class to render the well with less padding
+* `lg` - Adds an additional CSS class to render the well with extra padding
 
 Unlike other custom attributes, this attribute does not seek to conditionally render the element inside a `<div>`, so applying it to an existing `<div>` is the only option, as wells are not typically wrapped around single elements.
 
